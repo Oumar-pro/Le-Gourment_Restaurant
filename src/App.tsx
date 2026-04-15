@@ -35,37 +35,82 @@ const TESTIMONIALS = [
     name: "Ibrahim Moussa",
     role: "Client fidèle",
     quote: "Le meilleur poulet braisé de Niamey ! Le service est rapide et l'ambiance est vraiment chaleureuse. Je recommande vivement.",
-    image: "https://picsum.photos/seed/user1/100/100"
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&h=100&q=80"
   },
   {
     name: "Fatima Abdou",
     role: "Gastronome",
     quote: "Le Massa est incroyable, exactement comme celui de mon enfance. Un vrai régal pour les amateurs de cuisine authentique.",
-    image: "https://picsum.photos/seed/user2/100/100"
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&h=100&q=80"
   },
   {
     name: "Oumarou Sani",
     role: "Entrepreneur",
     quote: "Parfait pour mes déjeuners d'affaires. Le cadre est calme et la nourriture est toujours d'une qualité exceptionnelle.",
-    image: "https://picsum.photos/seed/user3/100/100"
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=100&h=100&q=80"
   }
 ];
 
 const MENU_DATA = {
   grillades: [
-    { name: "Poulet Braisé", price: "3,500", desc: "Poulet mariné aux épices locales, servi avec aloko ou frites." },
-    { name: "Mouton Grillé (Dibi)", price: "4,500", desc: "Viande de mouton tendre grillée au feu de bois." },
-    { name: "Poisson Braisé", price: "5,000", desc: "Capitaine frais du fleuve Niger, braisé avec soin." },
+    {
+      name: "Poulet Braisé",
+      price: "3,500",
+      desc: "Poulet mariné aux épices locales, servi avec aloko ou frites.",
+      image: "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      name: "Mouton Grillé (Dibi)",
+      price: "4,500",
+      desc: "Viande de mouton tendre grillée au feu de bois.",
+      image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      name: "Poisson Braisé",
+      price: "5,000",
+      desc: "Capitaine frais du fleuve Niger, braisé avec soin.",
+      image: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=800&q=80"
+    },
   ],
   plats_locaux: [
-    { name: "Riz Gras", price: "2,000", desc: "Riz cuisiné à la tomate avec viande et légumes frais." },
-    { name: "Massa", price: "1,500", desc: "Galettes de riz fermenté, servies avec une sauce onctueuse." },
-    { name: "Tô et Sauce Gombo", price: "2,500", desc: "Boule de mil accompagnée d'une sauce gombo traditionnelle." },
+    {
+      name: "Riz Gras",
+      price: "2,000",
+      desc: "Riz cuisiné à la tomate avec viande et légumes frais.",
+      image: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      name: "Massa",
+      price: "1,500",
+      desc: "Galettes de riz fermenté, servies avec une sauce onctueuse.",
+      image: "https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      name: "Tô et Sauce Gombo",
+      price: "2,500",
+      desc: "Boule de mil accompagnée d'une sauce gombo traditionnelle.",
+      image: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80"
+    },
   ],
   boissons: [
-    { name: "Bissap Frais", price: "500", desc: "Infusion d'hibiscus rouge, rafraîchissante et naturelle." },
-    { name: "Jus de Gingembre", price: "500", desc: "Jus de gingembre frais, piquant et énergisant." },
-    { name: "Eau Minérale (1.5L)", price: "700", desc: "Eau de source locale purifiée." },
+    {
+      name: "Bissap Frais",
+      price: "500",
+      desc: "Infusion d'hibiscus rouge, rafraîchissante et naturelle.",
+      image: "https://images.unsplash.com/photo-1595981267035-7b04ca84a82d?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      name: "Jus de Gingembre",
+      price: "500",
+      desc: "Jus de gingembre frais, piquant et énergisant.",
+      image: "https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      name: "Eau Minérale (1.5L)",
+      price: "700",
+      desc: "Eau de source locale purifiée.",
+      image: "https://images.unsplash.com/photo-1523362628745-0c100150b504?auto=format&fit=crop&w=800&q=80"
+    },
   ]
 };
 
@@ -81,12 +126,12 @@ export default function App() {
   const [loadedImages, setLoadedImages] = useState<Record<number, boolean>>({});
 
   const galleryImages = [
-    { src: "https://picsum.photos/seed/niamey-rest-1/400/500", aspect: "aspect-[4/5]" },
-    { src: "https://picsum.photos/seed/niamey-rest-2/400/300", aspect: "aspect-[4/3]" },
-    { src: "https://picsum.photos/seed/niamey-rest-3/400/600", aspect: "aspect-[2/3]" },
-    { src: "https://picsum.photos/seed/niamey-rest-4/400/400", aspect: "aspect-square" },
-    { src: "https://picsum.photos/seed/niamey-rest-5/400/550", aspect: "aspect-[3/4]" },
-    { src: "https://picsum.photos/seed/niamey-rest-6/400/350", aspect: "aspect-[5/4]" },
+    { src: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80", aspect: "aspect-[4/5]" },
+    { src: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=800&q=80", aspect: "aspect-[4/3]" },
+    { src: "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=800&q=80", aspect: "aspect-[2/3]" },
+    { src: "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=800&q=80", aspect: "aspect-square" },
+    { src: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80", aspect: "aspect-[3/4]" },
+    { src: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80", aspect: "aspect-[5/4]" },
   ];
 
   useEffect(() => {
@@ -328,7 +373,7 @@ export default function App() {
       <section className="relative min-h-[80vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://picsum.photos/seed/african-food-1/800/1200" 
+            src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80"
             alt="Plat local Niamey" 
             className="w-full h-full object-cover"
             loading="eager"
@@ -451,6 +496,14 @@ export default function App() {
                   exit={{ opacity: 0 }}
                   className="bg-white p-5 rounded-2xl shadow-sm border border-gray-50"
                 >
+                  <div className="aspect-video w-full mb-4 rounded-xl overflow-hidden bg-gray-100">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
                   <div className="flex justify-between items-start mb-2">
                     <h3 className="text-lg font-bold font-serif">{item.name}</h3>
                     <span className="text-primary font-bold">{item.price} F</span>
@@ -480,7 +533,7 @@ export default function App() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
               <img 
-                src="https://picsum.photos/seed/restaurant-kitchen/400/500" 
+                src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&q=80"
                 alt="Cuisine propre" 
                 className="rounded-3xl shadow-xl w-full aspect-[4/5] object-cover"
                 loading="lazy"
